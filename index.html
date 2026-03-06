@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
 
 *{
 margin:0;
@@ -25,6 +24,27 @@ background:#faf7f2;
 color:#4b2e2e;
 }
 
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:18px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:999;
+}
+
+nav a{
+text-decoration:none;
+color:#4b2e2e;
+font-weight:500;
+}
+
 /* HERO */
 
 .hero{
@@ -35,23 +55,17 @@ justify-content:center;
 align-items:center;
 text-align:center;
 background:white;
-padding:40px;
+padding-top:80px;
 }
 
 .hero img{
-width:120px;
+width:140px;
 margin-bottom:20px;
 }
 
-.hero h1{
-font-family:"Playfair Display";
-font-size:48px;
-margin-bottom:10px;
-}
-
 .hero p{
-margin-bottom:25px;
 font-size:18px;
+margin-bottom:25px;
 }
 
 .btn{
@@ -60,36 +74,17 @@ border-radius:30px;
 background:#4b2e2e;
 color:white;
 text-decoration:none;
-transition:.3s;
 }
-
-.btn:hover{
-background:#6b3f3f;
-}
-
-/* SECTIONS */
 
 section{
 padding:110px 10%;
 }
-
-/* TITLES */
 
 h2{
 font-family:"Playfair Display";
 font-size:36px;
 margin-bottom:50px;
 text-align:center;
-}
-
-/* GOLD LINE */
-
-.gold-line{
-width:3px;
-height:0;
-background:#d4af37;
-margin:40px auto;
-transition:height .6s ease;
 }
 
 /* GRID */
@@ -107,12 +102,14 @@ background:white;
 padding:25px;
 border-radius:18px;
 text-align:center;
-transition:.35s;
 border:1px solid rgba(0,0,0,0.05);
+transition:.35s;
 position:relative;
 }
 
-/* GOLD GLOW */
+.card:hover{
+transform:translateY(-6px);
+}
 
 .card::after{
 content:"";
@@ -127,10 +124,6 @@ transition:.4s;
 box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
-.card:hover{
-transform:translateY(-6px);
-}
-
 .card img{
 width:100%;
 border-radius:12px;
@@ -139,7 +132,7 @@ margin-bottom:15px;
 
 .card h3{
 font-size:20px;
-margin-bottom:6px;
+margin-bottom:5px;
 }
 
 .card small{
@@ -167,7 +160,7 @@ background:#4b2e2e;
 color:white;
 }
 
-/* CAIXAS DARK SECTION */
+/* CAIXAS */
 
 .caixas{
 background:linear-gradient(180deg,#2b1a12,#1a0f09);
@@ -181,38 +174,27 @@ border-radius:20px;
 text-align:center;
 font-size:20px;
 border:1px solid rgba(212,175,55,.3);
-transition:.4s;
 }
 
-.caixa-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(212,175,55,.25);
-}
+/* ADICIONAIS */
 
-.caixa-card h3{
-font-size:30px;
-margin-bottom:15px;
-}
-
-.caixa-card p{
-font-size:22px;
-margin:10px 0;
-}
-
-/* INFO */
-
-.info{
+.adicionais-card{
 background:white;
+padding:35px;
+border-radius:20px;
+border:1px solid #eee;
 }
+
+/* INFORMAÇÕES */
 
 .info-card{
-background:#fff;
-padding:30px;
+background:white;
+padding:35px;
 border-radius:18px;
 border:1px solid #eee;
 }
 
-/* CONTACT */
+/* WHATSAPP */
 
 .contact{
 text-align:center;
@@ -243,7 +225,7 @@ footer span{
 color:#d4af37;
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 
 .reveal{
 opacity:0;
@@ -261,21 +243,23 @@ transform:translateY(0);
 
 <body>
 
-<!-- HERO -->
+<nav>
+<a href="#cardapio">Cardápio</a>
+<a href="#caixas">Caixas</a>
+<a href="#adicionais">Adicionais</a>
+<a href="#info">Informações</a>
+<a href="#contato">Contato</a>
+</nav>
 
 <section class="hero">
 
 <img src="logo.png">
-
-<h1>Ateliê 27</h1>
 
 <p>Brigadeiros artesanais sob encomenda</p>
 
 <a href="#cardapio" class="btn">Ver Cardápio</a>
 
 </section>
-
-<!-- CARDÁPIO -->
 
 <section id="cardapio">
 
@@ -355,87 +339,86 @@ transform:translateY(0);
 <p>R$ 3,80</p>
 </div>
 
-<div class="card pre reveal">
-<img src="oreo.jpg">
-<h3>Palha Italiana Oreo</h3>
-<small>18g</small>
-<p>Consultar</p>
-</div>
-
 </div>
 
 </section>
 
-<!-- CAIXAS -->
+<section id="caixas" class="caixas">
 
-<section class="caixas">
-
-<h2>Caixas Personalizadas</h2>
+<h2>Valores das Caixas</h2>
 
 <div class="grid">
 
 <div class="caixa-card reveal">
-
 <h3>Tradicionais</h3>
-
 <p>25 unidades — R$ 65</p>
 <p>50 unidades — R$ 110</p>
 <p>100 unidades — R$ 200</p>
-
 </div>
 
 <div class="caixa-card reveal">
-
 <h3>Especiais</h3>
-
 <p>25 unidades — R$ 77</p>
 <p>50 unidades — R$ 130</p>
 <p>100 unidades — R$ 220</p>
-
 </div>
 
 <div class="caixa-card reveal">
-
 <h3>Premium</h3>
-
 <p>25 unidades — R$ 90</p>
 <p>50 unidades — R$ 165</p>
 <p>100 unidades — R$ 300</p>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- INFORMAÇÕES -->
+<section id="adicionais">
 
-<section class="info">
+<h2>Adicionais</h2>
+
+<div class="grid">
+
+<div class="adicionais-card reveal">
+<p>• Personalização de sabores</p>
+<p>• Combinação de caixas</p>
+</div>
+
+<div class="adicionais-card reveal">
+<p>• Embalagem padrão com caixeta</p>
+<p>• Forminha marrom elegante</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="info">
 
 <h2>Informações</h2>
 
 <div class="grid">
 
 <div class="info-card reveal">
-
-<p>• Sabores respeitam o limite de cada caixa</p>
 <p>• Produção sob encomenda</p>
 <p>• Pedido confirmado mediante sinal</p>
-<p>• Prazo mínimo de produção: consultar</p>
+</div>
 
+<div class="info-card reveal">
+<p>• Sabores respeitam o limite da caixa</p>
+<p>• Prazo mínimo de produção sob consulta</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- CONTATO -->
-
-<section class="contact">
+<section id="contato" class="contact">
 
 <h2>Faça seu pedido</h2>
 
-<a class="whats-btn" 
+<a class="whats-btn"
 href="https://wa.me/554799445543">
 Falar no WhatsApp
 </a>
@@ -444,13 +427,11 @@ Falar no WhatsApp
 
 <footer>
 
-Ateliê 27 • <span>Brigadeiros Artesanais</span>
+<span>Ateliê 27</span> • Brigadeiros Artesanais
 
 </footer>
 
 <script>
-
-/* FILTER */
 
 function filter(cat){
 
@@ -463,24 +444,16 @@ event.target.classList.add("active")
 cards.forEach(card=>{
 
 if(cat=="all"){
-
 card.style.display="block"
-
 }else if(card.classList.contains(cat)){
-
 card.style.display="block"
-
 }else{
-
 card.style.display="none"
-
 }
 
 })
 
 }
-
-/* SCROLL ANIMATION */
 
 function reveal(){
 
