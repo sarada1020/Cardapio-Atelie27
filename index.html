@@ -60,6 +60,7 @@ padding-top:80px;
 
 .hero img{
 width:720px;
+max-width:90%;
 margin-bottom:20px;
 }
 
@@ -89,13 +90,26 @@ margin-bottom:50px;
 text-align:center;
 }
 
-/* GRID */
+/* GRID PROFISSIONAL */
 
-.menu{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(300px, 320px));
-justify-content:center;
+grid-template-columns:repeat(3,1fr);
 gap:40px;
+justify-items:center;
+align-items:stretch;
+}
+
+@media(max-width:1024px){
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:700px){
+.grid{
+grid-template-columns:1fr;
+}
 }
 
 /* CARDS */
@@ -110,8 +124,12 @@ display:flex;
 flex-direction:column;
 justify-content:space-between;
 
-width:320px;
-height:100%;
+width:100%;
+max-width:320px;
+min-height:420px;
+
+transition:.3s;
+position:relative;
 }
 
 .card:hover{
@@ -146,6 +164,11 @@ margin-bottom:5px;
 
 .card small{
 color:#8b6a6a;
+}
+
+.card p{
+margin-top:auto;
+font-weight:500;
 }
 
 /* FILTER */
@@ -458,9 +481,9 @@ event.target.classList.add("active")
 cards.forEach(card=>{
 
 if(cat=="all"){
-card.style.display="block"
+card.style.display="flex"
 }else if(card.classList.contains(cat)){
-card.style.display="block"
+card.style.display="flex"
 }else{
 card.style.display="none"
 }
