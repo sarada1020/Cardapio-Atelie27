@@ -91,10 +91,11 @@ text-align:center;
 
 /* GRID */
 
-.grid{
+.menu{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
+grid-template-columns:repeat(auto-fit, minmax(300px, 320px));
+justify-content:center;
+gap:40px;
 }
 
 /* CARDS */
@@ -103,15 +104,13 @@ gap:35px;
 background:white;
 padding:25px;
 border-radius:18px;
-text-align:center;
 border:1px solid rgba(0,0,0,0.05);
-transition:.35s;
-position:relative;
 
-/* NOVO */
 display:flex;
 flex-direction:column;
 justify-content:space-between;
+
+width:320px;
 height:100%;
 }
 
@@ -139,7 +138,7 @@ object-fit:cover;
 border-radius:12px;
 margin-bottom:15px;
 }
-
+  
 .card h3{
 font-size:20px;
 margin-bottom:5px;
